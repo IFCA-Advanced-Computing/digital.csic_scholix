@@ -1,0 +1,17 @@
+How to run
+----------------
+This script includes two elements: the script itself (scholix.py) and a sqlite database to store the already found (and updated) references (identifiers.db).
+
+To run the script, execute:
+
+./scholix.py -u DATACITE_USER -p DATACITE_PASS -U DSPACE_DB_USER -P DSPACE_DB_PASS -H DSPACE_DB_HOST -T DSPACE_DB_PORT -D DSPACE_DB_DATABASE_NAME
+
+Where:
+
+DATACITE_USER: User for minting/managing the DOIs at datacite.
+DATACITE_PASS: Pass for minting/managing the DOIs at datacite.
+DSPACE_DB_USER: Dspace database user
+DSPACE_DB_PASS: DSpace database password
+DSPACE_DB_HOST: Dspace database host
+DSPACE_DB_PORT: Dspace database port (1733)
+DSPACE_DB_DATABASE_NAME: Dspace database name

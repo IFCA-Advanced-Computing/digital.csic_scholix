@@ -1,0 +1,6 @@
+requests
+elementpath
+json
+psycopg2
+re
+sqlite3
