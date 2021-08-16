@@ -1,3 +1,15 @@
+Description
+----------------
+This script updates the metadata stored by DataCite for a minted DOI assigned to a digital object at DIGITAL.CSIC to include the information about relation with other digiral objetcs.
+For the moment, it includes the relation "IsReferencedBy"
+
+How it works
+----------------
+The script looks into the DIGITAL.CSIC database in order to find the term "relation", with metadata_field_id = 48. An aditional SQLite database is created to store all the DOIs that have already been updated.
+When a metadata field "relation" is found, it checks if the DOI has been updated or not. If not, it gets the XML metadata from DataCite related to that DOI, that could be in DataCite metadata schema 3 or 4. The XML is modified in order
+to include the relationship information, adding the term "relatedIdentifier". A new XML is created, which is POSTed to DataCite and the new metadata information is now accessible at DataCite.
+If everything goes well, the DOI is included in the SQLite database to indicate that the information has been already updated.
+
 How to run
 ----------------
 This script includes two elements: the script itself (scholix.py) and a sqlite database to store the already found (and updated) references (identifiers.db).
